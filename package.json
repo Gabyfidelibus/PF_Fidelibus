@@ -1,0 +1,22 @@
+{
+  "name": "preentrega3",
+  "version": "1.0.0",
+  "description": "pre-entrega 3 Gabriel Fidelibus",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gabyfidelibus/PreEntrega3Fidelibus.git"
+  },
+  "keywords": [
+    "preentrega3"
+  ],
+  "author": "Gabriel Fidelibus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gabyfidelibus/PreEntrega3Fidelibus/issues"
+  },
+  "homepage": "https://github.com/Gabyfidelibus/PreEntrega3Fidelibus#readme"
+}
