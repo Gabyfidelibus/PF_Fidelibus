@@ -1,4 +1,4 @@
-HOST del sitio web: https://gabyfidelibus.github.io/PreEntrega2Fidelibus/
+HOST del sitio web: https://gabyfidelibus.github.io/PreEntrega3Fidelibus/
 
 Este proyecto es un sitio web de ventas enfocado en productos de Apple.
 
@@ -9,5 +9,6 @@ Tiene 5 paginas:
  - nosotros: es la pagina donde se describe a la "compañia"
  - contacto: es la pagina para que puedan contactarse con nosotros a traves de un mensaje o redes sociales
 
-En esta entrega hice uso de Grid, Flexbox, Bootstrap y Git.
-El sitio es completamente responsivo para todos los tamaños de pantalla, partiendo desde un ancho de 320px hasta 1200px.
+En esta entrega hice uso de SASS, donde incorpore variables y mixin.
+Tambien implemente SEO con las etiquetas title, meta "description" y "keywords", optimice el peso de la web disminuyendo el tamaño de las imagenes con ResizePixel sin perder calidad y complete los alts de las mismas.
+Hice el sitio completamente responsivo utilizando el enfoque de diseño mobile first.
