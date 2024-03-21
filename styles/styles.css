@@ -2,6 +2,7 @@
 /* fuentes */
 /* colores */
 /* sizes */
+/* mixin */
 /* Reset del CSS */
 * {
   margin: 0;
@@ -24,8 +25,8 @@ a {
 }
 
 ul, ol, li {
-  padding: 0;
   margin: 0;
+  padding: 0;
   list-style: none;
 }
 
@@ -45,8 +46,6 @@ body {
 }
 
 main {
-  margin: 0;
-  padding: 0;
   background-color: #f4f4f4;
   width: 100%;
   max-width: 3000px;
@@ -59,9 +58,8 @@ header {
   height: 56px;
   max-width: 3000px;
   background-color: #dadada;
-  margin: 0;
-  z-index: 100000;
-  box-shadow: 1px 0 5px #888;
+  z-index: 100;
+  box-shadow: 1px 1px 5px #888;
 }
 
 .navbar, .container-fluid {
@@ -202,7 +200,7 @@ footer .page-content {
   height: 750px;
   position: relative;
   overflow: hidden;
-  box-shadow: 1px 0 5px #888;
+  box-shadow: 1px 1px 5px #888;
 }
 
 .carousel input {
@@ -679,7 +677,6 @@ footer .page-content {
 
 @media only screen and (min-width: 992px) {
   .popular-products__item {
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     transition: transform 400ms, color 400ms;
     box-shadow: 1px 1px 5px #888;
@@ -799,8 +796,8 @@ main.nosotros p {
   justify-content: center;
   align-items: center;
   font-size: 18px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
   transition: background 400ms;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
 }
 
 .contacto .info .redes-sociales a:hover {
@@ -1024,10 +1021,10 @@ main.productos {
   background-color: #fff;
   margin: 30px;
   border: solid 1px #dadada;
-  box-shadow: 1px 1px 5px #dadada;
   border-radius: 10px;
   display: flex;
   flex-flow: row nowrap;
+  box-shadow: 1px 1px 5px #dadada;
 }
 
 .pagination a, .pagination .space {
@@ -1095,7 +1092,7 @@ main.productos {
     color: #3d3d3d;
   }
 }
-/* Estilos de la pagina "comparador" (no es responsive todavia) */
+/* Estilos de la pagina "comparador" */
 main.comparador {
   display: flex;
   flex-direction: column;

@@ -21,6 +21,11 @@ $lg: 992px;
 $xl: 1200px;
 $transition-time: 400ms;
 
+/* mixin */
+@mixin box-shadow-default ($blur, $color) {
+    box-shadow: 1px 1px $blur $color;
+}
+
 /* Reset del CSS */
 * {
     margin: 0;
@@ -43,8 +48,8 @@ a {
 }
 
 ul, ol, li {
-    padding: 0;
     margin: 0;
+    padding: 0;
     list-style: none;
 }
 
@@ -53,7 +58,7 @@ button {
 }
 
 /* Estilos comunes a todas las paginas */
-body{
+body {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -64,8 +69,6 @@ body{
 }
 
 main {
-    margin: 0;
-    padding: 0;
     background-color: $color-lighter-gray;
     width: 100%;
     max-width: $max-width;
@@ -78,9 +81,8 @@ header{
     height: $height-header;
     max-width: $max-width;
     background-color: $color-light-gray;
-    margin: 0;
-    z-index: 100000;
-    box-shadow: 1px 0 5px $color-gray;
+    z-index: 100;
+    @include box-shadow-default(5px, $color-gray);
 }
 
 .navbar, .container-fluid {
@@ -235,7 +237,7 @@ footer .page-content{
     height: 750px;
     position: relative;
     overflow: hidden;
-    box-shadow: 1px 0 5px $color-gray;
+    @include box-shadow-default(5px, $color-gray);
 }
 
 .carousel input {
@@ -665,7 +667,7 @@ footer .page-content{
     
     .recommended-products__item {
         border-radius: 20px;
-        box-shadow: 1px 1px 5px $color-gray;
+        @include box-shadow-default(5px, $color-gray);
     }
 
     .recommended-products__item h2 {
@@ -741,10 +743,9 @@ footer .page-content{
 @media only screen and (min-width: $lg) {
 
     .popular-products__item{
-        box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
         border-radius: 10px;
         transition: transform $transition-time, color $transition-time;
-        box-shadow: 1px 1px 5px $color-gray;
+        @include box-shadow-default(5px, $color-gray);
     }
 
     .popular-products__item:hover {
@@ -872,8 +873,8 @@ main.nosotros p {
     justify-content: center;
     align-items: center;
     font-size: 18px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5) ;
     transition: background $transition-time;
+    @include box-shadow-default(8px, rgba(0, 0, 0, 0.5));
 }
 
 .contacto .info .redes-sociales a:hover {
@@ -1078,7 +1079,7 @@ main.productos {
     .producto {
         border: 1px solid $color-light-gray;
         border-radius: 10px;
-        box-shadow: 1px 1px 5px $color-light-gray;
+        @include box-shadow-default(5px, $color-light-gray);
     }
 
 }
@@ -1113,10 +1114,10 @@ main.productos {
     background-color: #fff;
     margin: 30px;
     border: solid 1px $color-light-gray;
-    box-shadow: 1px 1px 5px $color-light-gray;
     border-radius: 10px;
     display: flex;
     flex-flow: row nowrap;
+    @include box-shadow-default(5px, $color-light-gray);
 }
 
 .pagination a, .pagination .space {
@@ -1186,7 +1187,7 @@ main.productos {
     }
 }
 
-/* Estilos de la pagina "comparador" (no es responsive todavia) */
+/* Estilos de la pagina "comparador" */
 main.comparador {
     display: flex;
     flex-direction: column;
@@ -1249,3 +1250,4 @@ main.comparador h1 {
         display: none;
     }
 }
+
