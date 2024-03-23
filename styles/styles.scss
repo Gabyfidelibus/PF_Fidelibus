@@ -462,6 +462,23 @@ footer .page-content{
     background-color: $color-light-violet;
 }
 
+#slide01 img {
+    mask-image: linear-gradient(to right, white 95%, transparent);
+}
+
+#slide02 img {
+    mask-image: linear-gradient(white 85%, transparent);
+}
+
+#slide03 img {
+    mask-image: linear-gradient(to top, white 85%, transparent);
+}
+
+#slide04 img {
+    mask-image: linear-gradient(to left, white 80%, transparent);
+}
+
+
 @media only screen and (min-width: $lg) {
 
     .carousel__slide {
