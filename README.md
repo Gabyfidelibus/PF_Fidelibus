@@ -9,4 +9,4 @@ Tiene 5 páginas:
  * nosotros: es la página donde se describe a la "compañia"
  * contacto: es la página para que puedan contactarse con nosotros a traves de un mensaje o redes sociales
 
-En esta entrega hice uso de SASS, donde incorporé variables y mixin. También implemente SEO con las etiquetas title, meta "description" y "keywords", optimice el peso de la web disminuyendo el tamaño de las imagenes con ResizePixel sin perder calidad y complete los alts de las mismas. Hice el sitio completamente responsivo utilizando el enfoque de diseño mobile first.
+En esta entrega hice uso de SASS, donde incorporé variables y mixin. También implemente SEO con las etiquetas title, meta "description" y "keywords", optimice el peso de la web disminuyendo el tamaño de las imágenes con ResizePixel sin perder calidad y complete los alts de las mismas. Hice el sitio completamente responsivo utilizando el enfoque de diseño mobile first.
