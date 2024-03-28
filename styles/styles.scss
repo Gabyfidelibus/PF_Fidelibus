@@ -6,7 +6,7 @@ $font-lucida: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida San
 /* colores */
 $color-lighter-gray: #f4f4f4;
 $color-light-gray: #dadada;
-$color-gray: #888;
+$color-gray: #777;
 $color-dark-gray: #3d3d3d;
 $color-light-violet: #f1dafc;
 $color-bright-violet: #a124e9;
@@ -24,6 +24,18 @@ $transition-time: 400ms;
 /* mixin */
 @mixin box-shadow-default ($blur, $color) {
     box-shadow: 1px 1px $blur $color;
+}
+
+@mixin banner ($background-url) {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0)),url($background-url);
 }
 
 /* Reset del CSS */
@@ -121,7 +133,7 @@ header{
     color: $color-light-gray;
     font-size: 1.25rem;
     font-weight: bold;
-    transition: color $transition-time;
+    transition: color $transition-time ease-in-out;
 }
 
 .navbar-nav li {
@@ -148,7 +160,7 @@ header{
         color: #000;
         font-size: 1.25rem;
         font-weight: bold;
-        transition: color $transition-time;
+        transition: color $transition-time ease-in-out;
     }
 
     #collapsibleNavbar .active a {
@@ -181,12 +193,13 @@ footer {
     gap: 20px;
     align-items: center;
     color: $color-gray;
+    z-index: 1;
 }
 
 footer a {
     text-decoration: none;
     color: $color-light-gray;
-    transition: color $transition-time;
+    transition: color $transition-time ease-in-out;
 }
 
 footer a:hover {
@@ -402,7 +415,7 @@ footer .page-content{
     font-weight: 500;
     color: $color-dark-violet;
     z-index: 10;
-    transition: color $transition-time;
+    transition: color $transition-time ease-in-out;
 }
 
 .carousel__slide--button-buy {
@@ -414,7 +427,8 @@ footer .page-content{
     border-radius: 20px;
     color: $color-dark-violet;
     z-index: 10;
-    transition: color $transition-time, background $transition-time, border $transition-time;
+    border: 1px solid $color-dark-violet;
+    transition: color $transition-time ease-in-out, background $transition-time ease-in-out;
 }
 
 .carousel__slide--button-info:hover {
@@ -425,7 +439,6 @@ footer .page-content{
 .carousel__slide--button-buy:hover {
     color: $color-light-violet;
     background-color: $color-dark-violet;
-    border: 1px solid $color-dark-violet;
     cursor: pointer;
 }
 
@@ -652,7 +665,7 @@ footer .page-content{
     border-radius: 10px;
     color: $color-dark-gray;
     background-color: transparent;
-    transition: background $transition-time, color $transition-time, border $transition-time;
+    transition: background $transition-time ease-in-out, color $transition-time ease-in-out, border $transition-time ease-in-out;
 }
 
 .recommended-products__button--info:hover {
@@ -761,7 +774,7 @@ footer .page-content{
 
     .popular-products__item{
         border-radius: 10px;
-        transition: transform $transition-time, color $transition-time;
+        transition: transform $transition-time ease-in-out, color $transition-time ease-in-out;
         @include box-shadow-default(5px, $color-gray);
     }
 
@@ -796,13 +809,31 @@ main.nosotros {
 
 main.contacto {
     justify-content: space-evenly;
-    padding: 20px;
 }
 
-main.nosotros h1 {
+main.nosotros .title {
+    margin-bottom: 25px;
+    @include banner("/assets/about-us.jpg");
+    @include box-shadow-default(5px, $color-gray);
+}
+
+main.contacto .title {
+    margin-bottom: 25px;
+    @include banner("/assets/contact.jpg");
+    @include box-shadow-default(5px, $color-gray);
+}
+
+main.comparador .title {
+    @include banner("");
+}
+
+main.nosotros h1, main.contacto h1, main.comparador h1 {
+    color: $color-lighter-gray;
     text-align: center;
-    margin: 25px 0;
-    font-size: 30px;
+    font-size: 35px;
+    font-weight: 900;
+    text-shadow: 2px 2px 5px $color-dark-gray;
+    text-transform: uppercase;
 }
 
 main.nosotros article {
@@ -811,6 +842,8 @@ main.nosotros article {
     font-size: 20px;
     text-align: start;
     text-wrap: pretty;
+    word-spacing: 5px;
+    line-height: 28px;
 }
 
 main.nosotros p {
@@ -818,36 +851,40 @@ main.nosotros p {
 }
 
 @media only screen and (min-width: $sm) {
-    main.nosotros h1 {
-        margin: 35px 0;
-        font-size: 33px;
+
+    main.nosotros .title, main.contacto .title, main.comparador .title {
+        height: 260px;
+    }
+
+    main.nosotros h1, main.contacto h1, main.comparador h1 {
+        font-size: 45px;
     }
 
     main.nosotros article {
         max-width: 1000px;
         margin-bottom: 30px;
         font-size: 25px;
+        word-spacing: 8px;
+        line-height: 32px;
     }
 }
 
 @media only screen and (min-width: $lg) {
 
-    main.nosotros h1 {
-        margin: 50px 0;
-        font-size: 48px;
+    main.nosotros .title, main.contacto .title, main.comparador .title {
+        height: 330px;
+    }
+
+    main.nosotros h1, main.contacto h1, main.comparador h1 {
+        font-size: 60px;
     }
 
     main.nosotros article {
         margin-bottom: 35px;
         font-size: 30px;
+        word-spacing: 10px;
+        line-height: 38px;
     }
-}
-
-.contacto h1 {
-    font-size: 30px;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 25px;
 }
 
 .contacto .info, .contacto .formulario {
@@ -890,7 +927,7 @@ main.nosotros p {
     justify-content: center;
     align-items: center;
     font-size: 18px;
-    transition: background $transition-time;
+    transition: background $transition-time ease-in-out;
     @include box-shadow-default(8px, rgba(0, 0, 0, 0.5));
 }
 
@@ -955,7 +992,7 @@ main.nosotros p {
     font-size: 20px;
     font-weight: 600;
     color: $color-lighter-gray;
-    transition: background $transition-time;
+    transition: background $transition-time ease-in-out;
     border: transparent;
 }
 
@@ -973,12 +1010,6 @@ main.nosotros p {
         justify-content: center;
         align-content: flex-start;
         gap: 36px;
-    }
-    
-    .contacto h1 {
-        margin: 20px 0 5px;
-        font-size: 36px;
-        width: 100%;
     }
 
     .contacto .info .col {
@@ -1053,7 +1084,7 @@ main.productos {
     flex-direction: column;
     align-items: start;
     padding-bottom: 20px;
-    transition: color $transition-time;
+    transition: all $transition-time ease-in-out;
 }
 
 .producto img {
@@ -1076,7 +1107,8 @@ main.productos {
 }
 
 .producto:hover {
-    color: $color-dark-violet;
+    color: $color-bright-violet;
+    filter: brightness(85%);
 }
 
 @media only screen and (min-width: $sm) {
@@ -1212,25 +1244,37 @@ main.comparador {
     align-items: center;
 }
 
-main.comparador h1 {
-    font-size: 35px;
-    margin: 40px 0;
+main.comparador .fondo {
+    position: absolute;
+    width: 100%;
+    max-width: $max-width;
+    max-height: calc(100vh - 57px);
+    height: auto;
+    mask-image: linear-gradient(white 85%, transparent);
+    z-index: 0;
+}
+
+.comparador .title {
+    z-index: 1;
 }
 
 .comparador table {
     width: $xl;
-    background-color: #eeeeee;
+    background-color: $color-light-gray;
     margin-bottom: 50px;
     border-collapse: collapse;
-    border: 5px solid #fff;
+    border: 3px solid $color-gray;
+    @include box-shadow-default(15px, $color-gray);
+    z-index: 1;
 }
 
 .comparador table th {
     text-align: center;
     padding: 10px 0;
+    font-size: 25px;
     background-color: #fff;
-    border-left: 5px solid #fff;
-    border-right: 5px solid #fff;
+    border-left: 3px solid $color-gray;
+    border-right: 3px solid $color-gray;
 }
 
 .comparador table th img {
@@ -1241,10 +1285,14 @@ main.comparador h1 {
 }
 
 .comparador table td {
-    padding: 10px 20px 10px 30px;
+    padding: 20px 20px 0 30px;
     text-align: start;
-    border-left: 5px solid #fff;
-    border-right: 5px solid #fff;
+    border-left: 3px solid $color-gray;
+    border-right: 3px solid $color-gray;
+}
+
+.comparador table tr:last-child td {
+    padding-bottom: 20px;
 }
 
 @media only screen and (max-width: $xl) {
