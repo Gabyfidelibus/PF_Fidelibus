@@ -813,13 +813,13 @@ main.contacto {
 
 main.nosotros .title {
     margin-bottom: 25px;
-    @include banner("/assets/about-us.jpg");
+    @include banner("../assets/about-us.jpg");
     @include box-shadow-default(5px, $color-gray);
 }
 
 main.contacto .title {
     margin-bottom: 25px;
-    @include banner("/assets/contact.jpg");
+    @include banner("../assets/contact.jpg");
     @include box-shadow-default(5px, $color-gray);
 }
 
@@ -909,6 +909,7 @@ main.nosotros p {
 
 .contacto .info .col p {
     color: $color-gray;
+    margin-bottom: 0;
 }
 
 .contacto .info .redes-sociales {
