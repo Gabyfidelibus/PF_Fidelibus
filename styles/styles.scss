@@ -1042,19 +1042,144 @@ main.productos {
     padding: 20px 20px 0;
 }
 
-.filtrar-productos h3 {
+.filtrar-productos details {
+    width: 234px;
+}
+
+.filtrar-productos summary {
     font-size: 30px;
-    font-weight: 300;
+    font-weight: 600;
+    margin: 20px 0;
+}
+
+.filtrar-productos .formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
 }
 
 .filtrar-productos select {
     width: 200px;
     padding: 12px 6px;
+    border-radius: 5px;
     border: 1px solid $color-gray;
     color: $color-gray;
     font-weight: 400;
     outline: 0;
     font-size: 16px;
+}
+
+.filtrar-productos h3 {
+    font-size: 25px;
+    font-weight: 300;
+    margin: 40px 0 20px;
+}
+
+.filtrar-productos .price-range {
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+}
+
+.filtrar-productos .price-range-input {
+    width: 100px;
+}
+
+.filtrar-productos .price-range-input label {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.filtrar-productos .price-range-input input{
+    width: 95%;
+    padding: 9px 6px;
+    border: 1px solid $color-gray;
+    border-radius: 5px;
+    color: $color-gray;
+    outline: 0;
+    font-size: 14px;
+}
+
+.filtrar-productos .price-range-input input:focus {
+    border: 1px solid $color-bright-violet;
+}
+
+.filtrar-productos .input-colores label {
+    width: fit-content;
+    display: block;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.filtrar-productos .input-colores input {
+    display: none;
+}
+
+.filtrar-productos .input-colores .cbox-color {
+    display: inline-block;
+    border-radius: 10px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 1px solid $color-gray;
+    padding: 9px 12px;
+    transition: all $transition-time ease-in-out;
+}
+
+.filtrar-productos .input-colores .color {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 100%;
+    border: 1px solid $color-gray;
+    margin-right: 10px;
+}
+
+.filtrar-productos .input-colores .cbox-color:hover {
+    border: 1px solid $color-dark-violet;
+    box-shadow: inset 0 0 3px $color-dark-violet;
+}
+
+.filtrar-productos .input-colores label input:checked ~ span.cbox-color {
+    border: 1px solid $color-bright-violet;
+    box-shadow: inset 0 0 5px $color-bright-violet;
+}
+
+#cbox-amarillo .color {
+    background-color: yellow;
+}
+#cbox-azul .color {
+    background-color: blue;
+}
+#cbox-blanco .color {
+    background-color: white;
+}
+#cbox-negro .color {
+    background-color: black;
+}
+#cbox-rojo .color {
+    background-color: red;
+}
+#cbox-verde .color {
+    background-color: green;
+}
+
+.filtrar-productos .formulario input.send-button {
+    display: block;
+    width: 100px;
+    background-color: $color-dark-violet;
+    padding: 12px;
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    color: $color-lighter-gray;
+    border-radius: 10px;
+    border: transparent;
+    transition: background $transition-time ease-in-out;
+}
+
+.filtrar-productos .formulario input.send-button:hover {
+    background-color: $color-bright-violet;
+    cursor: pointer;
 }
 
 .productos-container {
@@ -1111,10 +1236,74 @@ main.productos {
     filter: brightness(85%);
 }
 
+@media only screen and (min-width: $sm) and (max-width: $lg) {
+
+    .filtrar-productos {
+        width: 100%;
+    }
+
+    .filtrar-productos details {
+        width: 100%;
+    }
+
+    .filtrar-productos .formulario {
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+    }
+
+    .filtrar-productos .formulario .section2 {
+        margin-left: 20px;
+    }
+
+    .filtrar-productos .formulario .section2 h3 {
+        margin-top: 0;
+    }
+
+    .filtrar-productos .formulario .section2 .input-colores {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 10px;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: $sm) {
+
+    .filtrar-productos {
+        width: 100%;
+    }
+
+    .filtrar-productos details {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: $sm) and (max-width: 739px) {
+
+    .filtrar-productos {
+        position: relative;
+    }
+
+    .filtrar-productos .formulario .send-button {
+        align-self: flex-end;
+        margin-left: 20px;
+    }
+}
+
+@media only screen and (min-width: 740px) and (max-width: $lg) {
+
+    .filtrar-productos .formulario .send-button {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
 @media only screen and (min-width: $sm) {
 
     .productos-container {
-        padding: 0 20px;
+        padding: 20px;
     }
 
     .productos-publicados {
@@ -1141,8 +1330,7 @@ main.productos {
 
 @media only screen and (min-width: $xl) {
     main.productos {
-        flex-direction: row;
-        padding: 40px;
+        padding: 0 20px;
     } 
 
     .productos-publicados {
