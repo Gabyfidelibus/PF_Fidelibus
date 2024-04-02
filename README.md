@@ -1,5 +1,4 @@
 HOST con github pages: https://gabyfidelibus.github.io/PF_Fidelibus/
-
 HOST con netlify: https://pf-fidelibus.netlify.app/
 
 Este proyecto es un sitio web de ventas enfocado en productos de Apple.
